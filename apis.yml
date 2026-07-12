@@ -10,6 +10,8 @@ common:
     url: https://www.linkedin.com/company/securian-financial-group
   - type: Website
     url: https://www.securian-financial-group.com
+  - url: https://www.securian.com/about-us/newsroom/news-releases.html
+    type: Blog
 description: >-
   Securian Financial Group is a financial services holding company that provides life
   insurance, retirement solutions, investment management, and group benefits to individuals,
