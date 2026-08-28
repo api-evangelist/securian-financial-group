@@ -23,7 +23,7 @@ common:
   - type: LinkedIn
     url: https://www.linkedin.com/company/securian-financial-group
   - type: Website
-    url: https://www.securian-financial-group.com
+    url: https://www.securian.com/
   - url: https://www.securian.com/about-us/newsroom/news-releases.html
     type: Blog
 description: >-
