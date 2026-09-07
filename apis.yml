@@ -41,3 +41,5 @@ description: >-
   Securian Financial Group is a financial services holding company that provides life
   insurance, retirement solutions, investment management, and group benefits to individuals,
   businesses, and institutions.
+x-parent: securian-financial
+x-relationship: product
