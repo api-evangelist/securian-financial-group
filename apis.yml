@@ -47,6 +47,8 @@ maintainers:
     email: info@apis.io
 apis: []
 common:
+  - type: TermsOfService
+    url: https://www.securian.com/legal-information.html
   - type: DomainSecurity
     url: security/securian-financial-group-domain-security.yml
   - type: LinkedIn
@@ -89,8 +91,6 @@ description: >-
   no SDK. Its only anonymously readable machine-readable document is the OpenID Connect /
   OAuth 2.0 discovery metadata served by its PingFederate authorization server at
   sso.securian.com.
-x-parent: securian-financial
-x-relationship: product
 x-enrichment:
   date: '2026-09-06'
   status: enriched
