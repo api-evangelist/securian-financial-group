@@ -1,0 +1,32 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  registry.npmjs.org search "securian" (0 first-party results) ;
+  pypi.org/pypi/securian/json (404) ; rubygems.org search (0) ;
+  NuGet azuresearch-usnc.nuget.org query "securian" (totalHits 0) ;
+  api.github.com/search/users?q=securian (no Securian-owned org with public repos)
+note: >-
+  Searched, nothing found. Securian Financial publishes no first-party client library on any
+  public package registry, and there is no verified Securian GitHub organization with public
+  repositories — the two orgs whose names match (securian-native, securians) carry zero
+  public repos and no identifying metadata, so neither is claimed here. This is an honest
+  zero, consistent with a partner-onboarded API surface that has no public developer program.
+package_count: 0
+official_package_count: 0
+packages: []
+registries_checked:
+  - registry: npm
+    query: securian
+    result: no first-party package
+  - registry: pypi
+    query: securian
+    result: 404
+  - registry: rubygems
+    query: securian
+    result: no results
+  - registry: nuget
+    query: securian
+    result: totalHits 0
+  - registry: github
+    query: securian
+    result: no verified Securian organization with public repositories

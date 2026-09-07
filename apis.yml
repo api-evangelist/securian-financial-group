@@ -1,5 +1,6 @@
 aid: securian-financial-group
 name: "Securian Financial Group"
+position: Producing
 deliveryModel:
   model: unknown
   open_source: false
@@ -13,33 +14,85 @@ deliveryModel:
   method: derived
 specificationVersion: '0.23'
 accessModel:
-  pricing: unknown
-  onboarding: unknown
+  pricing: contact-sales
+  onboarding: sales
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  label: Partner/sales-gated — API access is arranged through a sales or partner agreement
+  confidence: high
+  source:
+  - https://www.securian.com/employers/flexible-administration/strategic-partnerships/securian-platform-connect.html
+  - https://www.securian.com/financial-institutions/products-solutions/embedded-technology-solutions.html
+  generated: '2026-09-06'
+  method: searched
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/securian-financial-group.png
 tags:
   - Fortune 1000
-url: 
+  - Financial Services
+  - Insurance
+  - Life Insurance
+  - Annuities
+  - Retirement
+  - Group Benefits
+  - Employee Benefits
+url:
   https://raw.githubusercontent.com/api-evangelist/securian-financial-group/refs/heads/main/apis.yml
-modified: '2026-03-24'
+created: '2026-04-07'
+modified: '2026-09-06'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/securian-financial-group-domain-security.yml
   - type: LinkedIn
-    url: https://www.linkedin.com/company/securian-financial-group
+    url: https://www.linkedin.com/company/securian-financial
   - type: Website
     url: https://www.securian.com/
   - url: https://www.securian.com/about-us/newsroom/news-releases.html
     type: Blog
+  - type: Support
+    url: https://www.securian.com/contact-us.html
+  - type: PrivacyPolicy
+    url: https://www.securian.com/privacy-notices.html
+  - type: WellKnown
+    url: well-known/securian-financial-group-well-known.yml
+  - type: OpenIDConnect
+    url: https://sso.securian.com/.well-known/openid-configuration
+  - type: Authentication
+    url: authentication/securian-financial-group-authentication.yml
+  - type: OAuthScopes
+    url: scopes/securian-financial-group-scopes.yml
+  - type: Conformance
+    url: conformance/securian-financial-group-conformance.yml
+  - type: Packages
+    url: packages/securian-financial-group-packages.yml
+  - type: Plans
+    url: plans/securian-financial-group-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/securian-financial-group-rate-limits.yml
+  - type: LLMsTxt
+    url: llms/securian-financial-group-llms.txt
 description: >-
-  Securian Financial Group is a financial services holding company that provides life
-  insurance, retirement solutions, investment management, and group benefits to individuals,
-  businesses, and institutions.
+  Securian Financial Group is a Minnesota-based mutual holding company providing life
+  insurance, annuities, retirement plan solutions, investment management, group and
+  workplace benefits, and credit-union and bank insurance programs to individuals,
+  employers and financial institutions. Securian runs production API infrastructure —
+  a Kong gateway at api.securian.com and AWS API Gateway hosts at api.connect.securian.com
+  and api.lifebenefits.com — and markets API integrations through Securian Platform Connect
+  (group benefits, aligned to LIMRA LDEx EOIS and BEM) and FlexTech (embedded payment
+  protection for digital lenders), but publishes no developer portal, no API contract and
+  no SDK. Its only anonymously readable machine-readable document is the OpenID Connect /
+  OAuth 2.0 discovery metadata served by its PingFederate authorization server at
+  sso.securian.com.
 x-parent: securian-financial
 x-relationship: product
+x-enrichment:
+  date: '2026-09-06'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v3

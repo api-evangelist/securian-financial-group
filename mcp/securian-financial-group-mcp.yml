@@ -1,0 +1,20 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  Web search for a Securian MCP server ; probes of api.securian.com, api.connect.securian.com,
+  api.lifebenefits.com and www.securian.com for /mcp, /.well-known/ai-plugin.json and
+  /llms.txt — all miss.
+note: >-
+  Searched, nothing found, and nothing derived. Securian ships no hosted MCP server and no
+  stdio MCP package, and there is no public OpenAPI to derive a candidate tool list from, so
+  this file records an absence rather than a manufactured candidate. NO MCPServer pointer is
+  emitted in apis.yml — the pointer would assert an agent surface that does not exist.
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []

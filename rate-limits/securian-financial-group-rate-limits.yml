@@ -1,0 +1,17 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://www.securian.com/employers/flexible-administration/strategic-partnerships/securian-platform-connect.html ;
+  https://www.securian.com/financial-institutions/products-solutions/embedded-technology-solutions.html ;
+  live probes of api.securian.com, api.connect.securian.com, api.lifebenefits.com
+note: >-
+  No published rate limits. Securian documents no developer-facing throttling policy, and
+  none of the three live API hosts returns a rate-limit header on an unauthenticated request:
+  api.securian.com (Kong) answers 404 "no Route matched with those values" with no
+  RateLimit-*/X-RateLimit-* headers; api.connect.securian.com and api.lifebenefits.com (AWS
+  API Gateway) answer 403 "Missing Authentication Token" with none either. Limits, if any,
+  are set per partner agreement. An honest zero.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status_code: null

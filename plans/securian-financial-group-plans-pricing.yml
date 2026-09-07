@@ -1,0 +1,19 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://www.securian.com/financial-institutions/products-solutions/embedded-technology-solutions.html ;
+  https://www.securian.com/employers/flexible-administration/strategic-partnerships/securian-platform-connect.html ;
+  https://www.securian.com/sitemap.xml
+note: >-
+  Securian publishes no API pricing, plans, tiers or quotas. Both API-bearing products —
+  FlexTech (embedded payment protection) and Securian Platform Connect (group-benefits
+  integrations) — route to a sales contact rather than a pricing page. FlexTech's page ends
+  in "Contact our sales team"; Platform Connect states "Technology capabilities, API
+  integration options, data exchange standards, value-added services and partner platform
+  functionality may vary by client, product, platform, plan design and state." An honest
+  zero, not an unchecked field.
+plan_count: 0
+pricing_model: contact-sales
+free_tier: false
+self_serve_signup: false
+plans: []

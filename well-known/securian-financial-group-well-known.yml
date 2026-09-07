@@ -1,0 +1,144 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  Live unauthenticated GET probes of the RFC-registered /.well-known/ path list on every
+  Securian-controlled host the record knows plus the API/identity hosts recovered from
+  Certificate Transparency (crt.sh, %.securian.com).
+note: >-
+  One real hit. sso.securian.com — Securian's PingFederate authorization server — serves a
+  complete OpenID Connect discovery document and an RFC 8414 OAuth 2.0 authorization-server
+  metadata document, both saved verbatim beside this index. Every other host returns a 404,
+  an authentication challenge, or an HTML shell. www.securian.com and www.lifebenefits.com
+  answer 200 with the site's own HTML page for arbitrary /.well-known/ paths (an AEM
+  catch-all), which is NOT a document and is recorded as a miss. api.securian.com is a Kong
+  gateway returning "no Route matched with those values"; api.connect.securian.com and
+  api.lifebenefits.com are AWS API Gateway hosts returning "Missing Authentication Token" —
+  live API surfaces with no anonymously readable discovery document.
+hosts:
+  - host: sso.securian.com
+    note: PingFederate authorization server (issuer https://sso.securian.com)
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        content_type: application/json
+        file: securian-financial-group-sso-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: application/json
+        file: securian-financial-group-sso-oauth-authorization-server.json
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/openid-federation
+        status: 404
+      - path: /.well-known/jwks.json
+        status: 404
+        note: JWKS is served off-well-known at https://sso.securian.com/pf/JWKS (200)
+  - host: www.securian.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: securian.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: api.securian.com
+    note: Kong gateway; every path answers {"message":"no Route matched with those values"}
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: api.connect.securian.com
+    note: >-
+      AWS API Gateway behind Imperva; every path answers 403
+      {"message":"Missing Authentication Token"}. This is the host behind the
+      "Securian Platform Connect" API integrations described at
+      https://www.securian.com/employers/flexible-administration/strategic-partnerships/securian-platform-connect.html
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/agent-card.json
+        status: 403
+  - host: api.lifebenefits.com
+    note: >-
+      AWS API Gateway for Securian's LifeBenefits group-benefits platform; every path
+      answers 403 {"message":"Missing Authentication Token"}.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/agent-card.json
+        status: 403
+      - path: /.well-known/agent.json
+        status: 403
+  - host: www.lifebenefits.com
+    note: >-
+      AEM catch-all — arbitrary /.well-known/ paths return HTTP 200 with the marketing page
+      HTML. Recorded as a miss: a 200 returning an HTML shell is not a document.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        note: HTML shell, not a document — soft 404
+      - path: /.well-known/api-catalog
+        status: 200
+        note: HTML shell, not a document — soft 404
+  - host: connect.securian.com
+    note: Imperva-fronted; /.well-known/security.txt and /openapi.json 404
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404

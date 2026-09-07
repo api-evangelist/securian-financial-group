@@ -1,0 +1,38 @@
+generated: '2026-09-06'
+method: probed
+source: https://sso.securian.com/.well-known/openid-configuration
+note: >-
+  scopes_supported read verbatim from Securian's published OpenID Connect discovery
+  document. There is no public scopes/permissions reference page to enrich these with —
+  the descriptions below for the four standard OIDC scopes are the OpenID Connect Core 1.0
+  definitions; the two non-standard scopes (edit, admin) are advertised by the server with
+  no published description, and are recorded here without one rather than guessed at.
+issuer: https://sso.securian.com
+authorization_endpoint: https://sso.securian.com/as/authorization.oauth2
+token_endpoint: https://sso.securian.com/as/token.oauth2
+docs: null
+scope_count: 7
+scopes:
+  - name: openid
+    standard: OpenID Connect Core 1.0
+    description: Required to obtain an ID Token; signals an OpenID Connect authentication request.
+  - name: profile
+    standard: OpenID Connect Core 1.0
+    description: Default profile claims (name, family_name, given_name, picture, locale, updated_at, ...).
+  - name: email
+    standard: OpenID Connect Core 1.0
+    description: The email and email_verified claims.
+  - name: address
+    standard: OpenID Connect Core 1.0
+    description: The address claim.
+  - name: phone
+    standard: OpenID Connect Core 1.0
+    description: The phone_number and phone_number_verified claims.
+  - name: edit
+    standard: null
+    description: null
+    note: Provider-specific scope advertised by the authorization server; no published definition.
+  - name: admin
+    standard: null
+    description: null
+    note: Provider-specific scope advertised by the authorization server; no published definition.

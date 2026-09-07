@@ -1,0 +1,92 @@
+generated: '2026-09-06'
+method: probed
+source: https://sso.securian.com/.well-known/openid-configuration
+note: >-
+  Derived entirely from Securian's own published discovery documents — there is no public
+  OpenAPI to read securitySchemes from, and no public developer authentication page.
+  Everything below is read verbatim out of the OpenID Connect discovery document and the
+  RFC 8414 authorization-server metadata document saved in well-known/.
+provider: Securian Financial Group
+issuer: https://sso.securian.com
+platform: PingFederate (Ping Identity) — inferred from the ping_* endpoints in the discovery document
+schemes:
+  - id: openIdConnect
+    type: openIdConnect
+    openIdConnectUrl: https://sso.securian.com/.well-known/openid-configuration
+    description: >-
+      OpenID Connect 1.0 provider. userinfo at /idp/userinfo.openid, back-channel and
+      front-channel logout both supported.
+    verified: probed
+  - id: oauth2
+    type: oauth2
+    description: OAuth 2.0 authorization server, RFC 8414 metadata published.
+    verified: probed
+    flows:
+      authorizationCode:
+        authorizationUrl: https://sso.securian.com/as/authorization.oauth2
+        tokenUrl: https://sso.securian.com/as/token.oauth2
+        refreshUrl: https://sso.securian.com/as/token.oauth2
+      clientCredentials:
+        tokenUrl: https://sso.securian.com/as/token.oauth2
+      implicit:
+        authorizationUrl: https://sso.securian.com/as/authorization.oauth2
+      password:
+        tokenUrl: https://sso.securian.com/as/token.oauth2
+      deviceCode:
+        deviceAuthorizationUrl: https://sso.securian.com/as/device_authz.oauth2
+        tokenUrl: https://sso.securian.com/as/token.oauth2
+endpoints:
+  authorization: https://sso.securian.com/as/authorization.oauth2
+  token: https://sso.securian.com/as/token.oauth2
+  pushed_authorization_request: https://sso.securian.com/as/par.oauth2
+  device_authorization: https://sso.securian.com/as/device_authz.oauth2
+  introspection: https://sso.securian.com/as/introspect.oauth2
+  revocation: https://sso.securian.com/as/revoke_token.oauth2
+  userinfo: https://sso.securian.com/idp/userinfo.openid
+  registration: https://sso.securian.com/as/clients.oauth2
+  end_session: https://sso.securian.com/idp/init_logout.openid
+  jwks: https://sso.securian.com/pf/JWKS
+grant_types_supported:
+  - authorization_code
+  - client_credentials
+  - refresh_token
+  - implicit
+  - password
+  - urn:ietf:params:oauth:grant-type:device_code
+  - urn:ietf:params:oauth:grant-type:jwt-bearer
+  - urn:ietf:params:oauth:grant-type:saml2-bearer
+  - urn:ietf:params:oauth:grant-type:token-exchange
+  - urn:openid:params:grant-type:ciba
+  - urn:pingidentity.com:oauth2:grant_type:validate_bearer
+client_authentication_methods:
+  - client_secret_basic
+  - client_secret_post
+  - client_secret_jwt
+  - private_key_jwt
+  - tls_client_auth
+  - none
+pkce:
+  supported: true
+  code_challenge_methods: [S256]
+sender_constrained_tokens:
+  dpop:
+    supported: true
+    signing_algs: [RS256, RS384, RS512, ES256, ES384, ES512, PS256, PS384, PS512]
+  mtls_client_auth: true
+  mtls_certificate_bound_access_tokens: false
+request_objects:
+  request_parameter_supported: true
+  request_uri_parameter_supported: false
+  signing_algs: [RS256, RS384, RS512, ES256, ES384, ES512, PS256, PS384, PS512]
+subject_types_supported: [public, pairwise]
+claims_supported: [sub]
+gaps:
+  - >-
+    No public developer authentication documentation. Securian's product APIs
+    (Securian Platform Connect, FlexTech, LifeBenefits) are onboarded through a sales or
+    partner agreement, so how a partner obtains a client_id for this authorization server
+    is not published anywhere we could fetch.
+  - >-
+    claims_supported lists only "sub" — an unusually thin claim set for an OIDC provider,
+    which typically means claims are configured per relying party rather than advertised.
+  - authorization_response_iss_parameter_supported is false (RFC 9207 not enabled).
