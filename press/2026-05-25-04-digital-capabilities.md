@@ -1,7 +1,9 @@
 ---
 title: Digital Capabilities
 url: https://www.securian.com/employers/employee-engagement/digital-capabilities.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Securian Financial Group" press release artificial intelligence'
 position: 4
 source: serpapi-google

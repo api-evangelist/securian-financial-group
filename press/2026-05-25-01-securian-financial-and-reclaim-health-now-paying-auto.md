@@ -1,7 +1,9 @@
 ---
 title: Securian Financial and Reclaim Health Now Paying Auto- ...
 url: https://www.securian.com/about-us/newsroom/news-releases/securian-financial-reclaim-health-paying-auto-substantiated-claims.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Securian Financial Group" press release artificial intelligence'
 position: 1
 source: serpapi-google
