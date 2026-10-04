@@ -29,7 +29,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/securian-financial-group.png
 tags:
   - Fortune 1000
-  - Financial-Services
+  - Financial Services
   - Insurance
   - Life Insurance
   - Annuities
@@ -45,6 +45,7 @@ tags_raw:
   - Retirement
   - Group Benefits
   - Employee Benefits
+  - Financial-Services
 url:
   https://raw.githubusercontent.com/api-evangelist/securian-financial-group/refs/heads/main/apis.yml
 created: '2026-04-07'
