@@ -8,6 +8,12 @@ artifacts:
   conformance/securian-financial-group-conformance.yml:
     method: unknown
     evidence: no authorship recorded
+  data-license/securian-financial-group-data-license.yml:
+    method: harvested
+    evidence: declared in the artifact
+  eligibility/securian-financial-group-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
@@ -17,10 +23,13 @@ artifacts:
   heartbeat/2026-11-06.yml:
     method: unknown
     evidence: no authorship recorded
+  heartbeat/2026-11-13.yml:
+    method: unknown
+    evidence: no authorship recorded
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -86,6 +95,9 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   llms/securian-financial-group-llms.txt:
     method: searched
     evidence: 'derive-llms-provenance.py: harvested'
@@ -113,6 +125,9 @@ artifacts:
   press/2026-05-25-05-securian-financial-group.md:
     method: unknown
     evidence: no authorship recorded
+  privacy/securian-financial-group-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/securian-financial-group-rate-limits.yml:
     method: searched
     evidence: declared in the artifact
@@ -137,6 +152,9 @@ artifacts:
   security/securian-financial-group-domain-security.yml:
     method: unknown
     evidence: no authorship recorded
+  terms/securian-financial-group-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
   well-known/securian-financial-group-sso-oauth-authorization-server.json:
     method: unknown
     evidence: no authorship recorded
